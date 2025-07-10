@@ -79,9 +79,8 @@ A modern, real-time chat application built with **Node.js**, **Express**, and **
 ---
 📁 Project Structure
 --------------------
-```
-<pre lang="md"> ``` chatapp/ ├── index.js # Main server file ├── package.json # Dependencies and scripts ├── pnpm-lock.yaml # Lock file for dependencies ├── README.md # Basic project info └── public/ # Static files ├── index.html # Main HTML file ├── script.js # Client-side JavaScript └── style.css # Additional CSS (unused) ``` </pre>
-```
+<img width="800" height="652" alt="image" src="https://github.com/user-attachments/assets/f5fb72a0-3616-46a7-adbb-fa90bc9b21e6" />
+
 ## 🔧 Installation & Setup
 -----------------------
 
