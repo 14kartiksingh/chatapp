@@ -79,7 +79,8 @@ A modern, real-time chat application built with **Node.js**, **Express**, and **
 ---
 📁 Project Structure
 --------------------
-<img width="800" height="652" alt="image" src="https://github.com/user-attachments/assets/f5fb72a0-3616-46a7-adbb-fa90bc9b21e6" />
+<img width="289" height="128" alt="image" src="https://github.com/user-attachments/assets/8859cf75-bd44-4d64-881b-0d9b558f1e18" />
+
 
 ## 🔧 Installation & Setup
 -----------------------
@@ -171,12 +172,12 @@ npm start
  
   🔄 Application Flow
 
-<pre lang="md"> ```mermaid graph TD A[User Opens App] --> B[Enter Username] B --> C[Connect to Server] C --> D[Send 'userJoined' Event] D --> E[Server Stores User] E --> F[Broadcast Join Notification] F --> G[User Can Send Messages] G --> H[Type Message] H --> I[Typing Indicator Sent] I --> J[Send Message] J --> K[Server Broadcasts Message] K --> L[All Users Receive Message] L --> M[Message Displayed] M --> G G --> N[User Disconnects] N --> O[Server Cleans Up] O --> P[Broadcast Leave Notification] ``` </pre>
+<img width="350" height="723" alt="image" src="https://github.com/user-attachments/assets/468771e5-7986-4b7a-b7ec-49ec4e3904fa" />
+
 
 📊 Architecture Overview
 
-<pre lang="md"> ```mermaid graph LR A[Client Browser] <--> B[Socket.IO Connection] B <--> C[Express Server] C --> D[Static Files] C --> E[User Map Storage] C --> F[Real-time Events] subgraph "Client Side" A --> G[HTML Interface] A --> H[JavaScript Logic] A --> I[CSS Styling] end subgraph "Server Side" C --> J[Connection Handler] C --> K[Message Router] C --> L[User Management] end ``` </pre>
-
+<img width="800" height="652" alt="image" src="https://github.com/user-attachments/assets/f5fb72a0-3616-46a7-adbb-fa90bc9b21e6" />
 
 🚦 API Events Reference
 -----------------------
@@ -364,4 +365,4 @@ To contribute to this project:
 📝 License
 ----------
 
-This project is licensed under the ISC License.
+This project is licensed under the MIT License.
