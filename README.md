@@ -39,34 +39,85 @@ A modern, real-time chat application built with Node.js, Express, and Socket.IO.
 *   **Message differentiation** - Different styling for own vs. other messages
     
 
-🛠 Technical Stack
-------------------
+# 💬 Real-Time Chat App
 
-**ComponentTechnologyVersionBackend**Node.jsLatest**Web Framework**Express^4.21.2**Real-time Communication**Socket.IO^4.8.1**Frontend**Vanilla JavaScriptES6+**Styling**CSS3Custom styles**Icons**Font Awesome6.0.0**Package Manager**pnpm10.6.3
+A modern, real-time chat application built with **Node.js**, **Express**, and **Socket.IO**. It features a clean, responsive UI and interactive real-time communication functionalities like typing indicators, theme switching, and user notifications.
 
+---
+
+## 🚀 Features
+
+### 🧩 Core
+- **Real-time Messaging** – Powered by WebSockets for instant message delivery.
+- **User Presence** – Shows when users join or leave.
+- **Typing Indicators** – Know when someone is typing.
+- **Theme Switching** – Toggle between light and dark modes.
+- **Responsive Design** – Mobile and desktop-friendly.
+- **Message Timestamps** – Know exactly when messages were sent.
+- **Online Status Indicators** – Visual cues for active users.
+
+### 🎯 User Experience
+- Prompt to enter username on join.
+- System messages for join/leave events.
+- Auto-scrolls to the latest message.
+- Send messages with `Enter` key.
+- Separate styles for your own vs. others' messages.
+
+---
+
+## 🛠 Technical Stack
+
+| Component              | Technology       | Version     |
+|------------------------|------------------|-------------|
+| Backend                | Node.js          | Latest      |
+| Web Framework          | Express          | ^4.21.2     |
+| Real-time Communication| Socket.IO        | ^4.8.1      |
+| Frontend               | Vanilla JS (ES6+) | –          |
+| Styling                | CSS3 (Custom)    | –           |
+| Icons                  | Font Awesome     | 6.0.0       |
+| Package Manager        | pnpm             | 10.6.3      |
+
+---
 📁 Project Structure
 --------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   chatapp/  ├── index.js                 # Main server file  ├── package.json            # Dependencies and scripts  ├── pnpm-lock.yaml         # Lock file for dependencies  ├── README.md              # Basic project info  └── public/                # Static files      ├── index.html         # Main HTML file      ├── script.js          # Client-side JavaScript      └── style.css          # Additional CSS (unused)   `
+chatapp/
+├── index.js                 # Main server file
+├── package.json            # Dependencies and scripts
+├── pnpm-lock.yaml         # Lock file for dependencies
+├── README.md              # Basic project info
+└── public/                # Static files
+    ├── index.html         # Main HTML file
+    ├── script.js          # Client-side JavaScript
+    └── style.css          # Additional CSS (unused)
 
-🔧 Installation & Setup
+## 🔧 Installation & Setup
 -----------------------
 
-### Prerequisites
+### 📦 Prerequisites
 
-*   Node.js (v14 or higher)
-    
-*   pnpm (recommended) or npm
+- Node.js v14+
+- [pnpm](https://pnpm.io/) (recommended) or npm
     
 
 ### Installation Steps
 
-1.  git clone https://github.com/14kartiksingh/chatapp.gitcd chatapp
-    
-2.  pnpm install# ornpm install
-    
-3.  pnpm start# ornpm start
-    
+```bash
+git clone https://github.com/14kartiksingh/chatapp.git
+cd chatapp
+```
+# Install dependencies
+```
+pnpm install
+# or
+npm install
+```
+# Start the server
+```
+pnpm start
+# or
+npm start
+   ``` 
 4.  **Access the application** Open your browser and navigate to http://localhost:3000
     
 
@@ -75,11 +126,25 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 ### Client → Server Events
 
-**EventPayloadDescription**userJoinedusername: stringUser joins the chatchatMessage{username: string, message: string}User sends a messagetypingusername: stringUser starts typingstopTypingnoneUser stops typingdisconnectnoneUser disconnects
+| Event         | Payload               | Description        |
+| ------------- | --------------------- | ------------------ |
+| `userJoined`  | `username: string`    | New user joins     |
+| `chatMessage` | `{username, message}` | Message sent       |
+| `typing`      | `username: string`    | User starts typing |
+| `stopTyping`  | `none`                | User stops typing  |
+| `disconnect`  | `none`                | User disconnects   |
+
 
 ### Server → Client Events
 
-**EventPayloadDescription**message{type: string, username: string, message: string, timestamp?: string}New message receiveduserJoinedusername: stringAnother user joineduserLeftusername: stringUser left the chattypingusername: stringSomeone is typingstopTypingnoneStop typing indicator
+| Event        | Payload                                | Description           |
+| ------------ | -------------------------------------- | --------------------- |
+| `message`    | `{type, username, message, timestamp}` | New chat message      |
+| `userJoined` | `username: string`                     | Someone joined        |
+| `userLeft`   | `username: string`                     | Someone left          |
+| `typing`     | `username: string`                     | Typing indicator      |
+| `stopTyping` | `none`                                 | Stop typing indicator |
+
 
 🎨 UI/UX Features
 -----------------
@@ -113,11 +178,15 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 *   **System messages**: Centered, muted color
     
 *   **Animations**: Smooth slide-in effect for new messages
-    
+ 
+  🔄 Application Flow
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML
+<pre lang="md"> ```mermaid graph TD A[User Opens App] --> B[Enter Username] B --> C[Connect to Server] C --> D[Send 'userJoined' Event] D --> E[Server Stores User] E --> F[Broadcast Join Notification] F --> G[User Can Send Messages] G --> H[Type Message] H --> I[Typing Indicator Sent] I --> J[Send Message] J --> K[Server Broadcasts Message] K --> L[All Users Receive Message] L --> M[Message Displayed] M --> G G --> N[User Disconnects] N --> O[Server Cleans Up] O --> P[Broadcast Leave Notification] ``` </pre>
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML
+📊 Architecture Overview
+
+<pre lang="md"> ```mermaid graph LR A[Client Browser] <--> B[Socket.IO Connection] B <--> C[Express Server] C --> D[Static Files] C --> E[User Map Storage] C --> F[Real-time Events] subgraph "Client Side" A --> G[HTML Interface] A --> H[JavaScript Logic] A --> I[CSS Styling] end subgraph "Server Side" C --> J[Connection Handler] C --> K[Message Router] C --> L[User Management] end ``` </pre>
+
 
 🚦 API Events Reference
 -----------------------
