@@ -1,5 +1,4 @@
-Chat App Documentation
-======================
+
 
 Overview
 --------
@@ -43,7 +42,7 @@ A modern, real-time chat application built with Node.js, Express, and Socket.IO.
 
 A modern, real-time chat application built with **Node.js**, **Express**, and **Socket.IO**. It features a clean, responsive UI and interactive real-time communication functionalities like typing indicators, theme switching, and user notifications.
 
----
+
 
 ## 🚀 Features
 
@@ -80,17 +79,9 @@ A modern, real-time chat application built with **Node.js**, **Express**, and **
 ---
 📁 Project Structure
 --------------------
-
-chatapp/
-├── index.js                 # Main server file
-├── package.json            # Dependencies and scripts
-├── pnpm-lock.yaml         # Lock file for dependencies
-├── README.md              # Basic project info
-└── public/                # Static files
-    ├── index.html         # Main HTML file
-    ├── script.js          # Client-side JavaScript
-    └── style.css          # Additional CSS (unused)
-
+```
+<pre lang="md"> ``` chatapp/ ├── index.js # Main server file ├── package.json # Dependencies and scripts ├── pnpm-lock.yaml # Lock file for dependencies ├── README.md # Basic project info └── public/ # Static files ├── index.html # Main HTML file ├── script.js # Client-side JavaScript └── style.css # Additional CSS (unused) ``` </pre>
+```
 ## 🔧 Installation & Setup
 -----------------------
 
